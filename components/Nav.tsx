@@ -6,7 +6,7 @@ import Image from "next/image";
 import logo from "@/assets/logo.png";
 
 
-export const Nav = ({ replace }: { replace: boolean }) => {
+export const Nav = () => {
   return (
     <div
       className={
