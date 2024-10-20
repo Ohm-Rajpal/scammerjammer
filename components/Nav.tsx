@@ -10,7 +10,7 @@ export const Nav = ({ replace }: { replace: boolean }) => {
   return (
     <div
       className={
-        "px-4 py-2 flex items-center h-14 z-50 bg-card border-b border-border"
+        "px-4 py-2 flex items-center h-14 z-50 bg-card border-b border-border pr-20"
       }
     >
       {/* Logo, directs to home */}
@@ -19,16 +19,20 @@ export const Nav = ({ replace }: { replace: boolean }) => {
         <Image 
           src={logo} 
           alt="logo" 
-          className="rounded-full w-24 xs:w-10 md:w-10 lg:w-12 xl:w-10" // Responsive width and height
+          className="rounded-full w-10 xs:w-5 md:w-10 lg:w-15 xl:w-10" // Responsive width and height
           priority={true}
         />
-    </Link>
+      </Link>
 
       </div>
       
 
       {/* Navigation Links */}
       <div className={"ml-auto flex items-center gap-1 text-xs lg:text-base"}>
+        <Link href="/ " className="ml-4 font-medium hover:underline">
+          Home 
+        </Link>
+
         <Link href="/about" className="ml-4 font-medium hover:underline">
           About 
         </Link>
@@ -38,32 +42,27 @@ export const Nav = ({ replace }: { replace: boolean }) => {
           Try Us Now
         </Link>
 
-        <Link href="/team" className="ml-4 font-medium hover:underline">
+        {/* <Link href="/team" className="ml-4 font-medium hover:underline">
           Meet Our Team 
-        </Link>
+        </Link> */}
 
         {/* Conditionally render Login Page based on the 'replace' prop */}
-        {!replace && (
+        {/* {!replace && (
           <Link href="/login" className="ml-4 font-medium hover:underline">
             Login
           </Link>        
-        )}
+        )} */}
 
         { /* Register */ }
-        <Link href='/register' className="ml-4 font-medium hover:underline">
+        {/* <Link href='/register' className="ml-4 font-medium hover:underline">
           Register
-        </Link>
+        </Link> */}
 
-        {replace && (
+        {/* {replace && (
           <Link href="/logout" className="ml-4 font-medium hover:underline">
             Log out
           </Link>
-        )}
-        
-
-       
-
-        
+        )} */}
 
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function Landing() {
         <section className="min-h-fit flex flex-col lg:flex-row items-center text-center lg:text-left px-4 pt-40 pb-10 gap-10">
           <div className="flex-1 lg:pl-16 xl:pl-24 pb-10">
             <h1 className="animate-in fade-in-5 duration-1000 ease-in text-6xl font-bold text-gray-800 mb-6">
-              Destroy Scammers At Their Own Game.
+              Beating Scammers At Their Own Game.
             </h1>
             <p className="animate-in fade-in-5 duration-1000 ease-in text-xl text-gray-600 mb-8">
               Take control of your phone! Waste the scammers' time, not yours. We engage them so you don't have to.
@@ -43,7 +43,8 @@ export default function Landing() {
           </h2>
           <div className="flex flex-wrap justify-center gap-8">
             <div className="max-w-sm shadow-md rounded-lg p-6 text-center">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Identify Scammers</h3>
+              <h3 className="text-xl font-bold text-gray-800 ">Identify Scammers</h3>
+              <h3 className="text-xl  text-gray-800 mb-4">(Coming Soon)</h3> 
               <p className="text-gray-600">
                 Using Hume AI, we analyze conversations to detect emotional patterns associated with scams. Once verified, we engage with the scammer.
               </p>

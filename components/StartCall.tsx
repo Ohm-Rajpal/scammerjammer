@@ -3,14 +3,28 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Phone } from "lucide-react";
 
-export default function StartCall() {
+interface StartCallProps {
+  onCallStart: () => void;
+}
+
+export default function StartCall({ onCallStart }: StartCallProps) {
   const { status, connect } = useVoice();
+
+  const handleStartCall = () => {
+    connect()
+      .then(() => {
+        onCallStart(); // Call this function when the call successfully starts
+      })
+      .catch((error) => {
+        console.error("Failed to start call:", error);
+      });
+  };
 
   return (
     <AnimatePresence>
       {status.value !== "connected" ? (
         <motion.div
-          className={"fixed inset-0 p-4 flex items-center justify-center bg-background"}
+          className={" inset-0 p-4 flex items-center justify-center pb-40"}
           initial="initial"
           animate="enter"
           exit="exit"
@@ -29,17 +43,12 @@ export default function StartCall() {
               }}
             >
               <Button 
-                className={"z-50 flex items-center gap-1.5"}
-                onClick={() => {
-                  connect()
-                    .then(() => {})
-                    .catch(() => {})
-                    .finally(() => {});
-                }}
+                className={"z-50 bg-purple-700 flex items-center gap-1.5"}
+                onClick={handleStartCall}
               >
                 <span>
                   <Phone
-                    className={"size-4 opacity-50"}
+                    className={"size-4 "}
                     strokeWidth={2}
                     stroke={"currentColor"}
                   />
